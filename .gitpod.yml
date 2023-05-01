@@ -1,0 +1,3 @@
+tasks:
+  - before: sh ./setup.sh
+    command: npm run dev
