@@ -4,8 +4,14 @@ from langchain.agents import create_csv_agent
 import sys
 
 
+# OPENAI_API_KEY must be set
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+dbPath = os.path.join(current_dir, "../db", "sample_data.csv")
+
 agent = create_csv_agent(OpenAI(temperature=0),
-                        '../db/sample_data.csv',
+                        dbPath,
                         verbose=True)
 
 prompt = "Act as a friendly and informative medical professional and answer the following question: "
